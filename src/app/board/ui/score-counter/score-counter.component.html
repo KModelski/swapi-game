@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header class="d-flex justify-content-center">
+    <h1 class="text-uppercase fw-bold">Score Counter</h1>
+  </mat-card-header>
+  <mat-card-content class="d-flex justify-content-space-between">
+    <div class="d-flex flex-column align-items-center w-100">
+      <div [matBadge]="score?.playerOneScore" matBadgeSize="large" matBadgeOverlap="false"><h2 class="text-uppercase">Player One</h2></div>
+    </div>
+    <div class="d-flex flex-column align-items-center w-100">
+      <div [matBadge]="score?.playerTwoScore" matBadgeSize="large" matBadgeOverlap="false" matBadgeColor="accent"><h2 class="text-uppercase">Player Two</h2></div>
+    </div>
+  </mat-card-content>
+</mat-card>

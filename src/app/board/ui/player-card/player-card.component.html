@@ -1,0 +1,50 @@
+<ng-container *ngTemplateOutlet="peopleCard ? person : starship"></ng-container>
+
+<ng-template #person>
+  <mat-card>
+    <mat-card-header class="d-flex justify-content-center">
+      <mat-card-title>
+        {{ peopleCard?.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Height: {{ peopleCard?.height }}</li>
+        <li class="list-group-item">Mass: {{ peopleCard?.mass }}</li>
+        <li class="list-group-item">Hair Color: {{ peopleCard?.hair_color }}</li>
+        <li class="list-group-item">Skin Color: {{ peopleCard?.skin_color }}</li>
+        <li class="list-group-item">Eye Color: {{ peopleCard?.eye_color }}</li>
+        <li class="list-group-item">Birth Year: {{ peopleCard?.birth_year }}</li>
+        <li class="list-group-item">Gender: {{ peopleCard?.gender }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #starship>
+  <mat-card>
+    <mat-card-header class="d-flex justify-content-center">
+      <mat-card-title class="d-flex justify-content-center">
+        {{ starshipCard?.name }}
+      </mat-card-title>
+      <mat-card-subtitle class="d-flex justify-content-center">
+        {{ starshipCard?.model }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Class: {{ starshipCard?.starship_class }}</li>
+        <li class="list-group-item">Manufacturer: {{ starshipCard?.manufacturer }}</li>
+        <li class="list-group-item">Cost: {{ starshipCard?.cost_in_credits }}</li>
+        <li class="list-group-item">Length: {{ starshipCard?.length }}</li>
+        <li class="list-group-item">Crew: {{ starshipCard?.crew }}</li>
+        <li class="list-group-item">Passengers: {{ starshipCard?.passengers }}</li>
+        <li class="list-group-item">Max Atmosphering Speed: {{ starshipCard?.max_atmosphering_speed }}</li>
+        <li class="list-group-item">Hyperdrive Rating: {{ starshipCard?.hyperdrive_rating }}</li>
+        <li class="list-group-item">MGLT: {{ starshipCard?.MGLT }}</li>
+        <li class="list-group-item">Cargo Capacity: {{ starshipCard?.cargo_capacity }}</li>
+        <li class="list-group-item">Consumables: {{ starshipCard?.consumables }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

@@ -1,0 +1,54 @@
+<mat-toolbar class="mb-4" color="primary">
+  <span>SWAPI Game by Karol Modelski</span>
+</mat-toolbar>
+<div class="container">
+  <div class="row gy-4">
+    <div class="col-12">
+      <app-score-counter [score]="score$ | async"></app-score-counter>
+    </div>
+    <ng-container *ngIf="peopleCards$ | async as peopleCards">
+      <div class="col-12">
+        <div class="row g-3 g-md-0">
+          <div class="col-12 col-md-5">
+            <app-player-card [peopleCard]="peopleCards[0]"></app-player-card>
+          </div>
+          <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+            <h1 class="m-0">VS</h1>
+          </div>
+          <div class="col-12 col-md-5">
+            <app-player-card [peopleCard]="peopleCards[1]"></app-player-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="starshipCards$ | async as starshipCards">
+      <div class="col-12">
+        <div class="row g-3 g-md-0">
+          <div class="col-12 col-md-5">
+            <app-player-card [starshipCard]="starshipCards[0]"></app-player-card>
+          </div>
+          <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+            <h1 class="m-0">VS</h1>
+          </div>
+          <div class="col-12 col-md-5">
+            <app-player-card [starshipCard]="starshipCards[1]"></app-player-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isLoading$ | async">
+      <div class="col-12">
+        <div class="row g-3">
+          <app-loader></app-loader>
+        </div>
+      </div>
+    </ng-container>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <app-resource-switch [isLoading]="(isLoading$ | async)!" (resourceSelected)="onResourceSelected($event)"></app-resource-switch>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
